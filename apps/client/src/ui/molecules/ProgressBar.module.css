@@ -1,0 +1,11 @@
+.track {
+  height: 1px;
+  background: var(--color-bg-2);
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a0080, var(--color-neon));
+  box-shadow: 0 0 8px rgba(157, 78, 221, 0.5);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

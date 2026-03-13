@@ -1,0 +1,9 @@
+.root {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--color-neon);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.65;
+}

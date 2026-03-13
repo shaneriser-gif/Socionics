@@ -1,0 +1,17 @@
+.root {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 2px;
+  border: 1px solid var(--color-neon-dim);
+  color: var(--color-neon);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--color-glow);
+}
+
+.glow {
+  box-shadow:
+    0 0 6px rgba(157, 78, 221, 0.35),
+    0 0 15px rgba(157, 78, 221, 0.12);
+}

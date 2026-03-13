@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.label {
+  color: var(--color-text-dim);
+  font-size: 10px;
+}
+
+.value {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  font-family: var(--font-mono);
+}
+
+.dim {
+  color: var(--color-text-dim);
+}
+
+.fail {
+  color: var(--color-fail);
+}

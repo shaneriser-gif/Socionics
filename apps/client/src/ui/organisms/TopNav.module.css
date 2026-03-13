@@ -1,0 +1,62 @@
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(6, 6, 11, 0.91);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-line);
+  padding: 13px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--color-text-primary);
+}
+
+.brand span {
+  color: var(--color-neon);
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--color-line);
+}
+
+.section {
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+.right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.reset {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-dim);
+  font-size: 9px;
+  font-family: var(--font-mono);
+}
+
+.counter {
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
