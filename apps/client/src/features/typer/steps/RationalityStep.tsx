@@ -69,7 +69,7 @@ export default function RationalityStep({ typer }: RationalityStepProps) {
       <HintBox title="⚠ Частые ловушки">
         <div className={styles.warnList}>
           <div>
-            <span className={styles.warn}>ИЛЭ, ИЭИ, ИЛИ</span> — иррационалы с
+            <span className={styles.warn}>ИЭИ, ИЛИ</span> — иррационалы с
             базовой интуицией, любят обдумывать сценарии и могут казаться
             «плановиками». Уточни: план реализуется или гибко перестраивается?
           </div>
