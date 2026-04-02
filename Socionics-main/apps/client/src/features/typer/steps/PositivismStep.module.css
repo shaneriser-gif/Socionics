@@ -1,0 +1,18 @@
+.emphasis {
+  color: var(--color-text-primary);
+  font-style: normal;
+}
+
+.warnList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.warn {
+  color: var(--color-warn);
+}
+
+.note {
+  color: var(--color-text-secondary);
+}

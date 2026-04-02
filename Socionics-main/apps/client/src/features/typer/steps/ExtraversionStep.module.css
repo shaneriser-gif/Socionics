@@ -1,0 +1,31 @@
+.emphasis {
+  color: var(--color-text-primary);
+  font-style: normal;
+}
+
+.hintList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hintTitle {
+  color: var(--color-text-ghost);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.hintDesc {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  padding-left: 12px;
+}
+
+.warn {
+  color: var(--color-warn);
+}
+
+.hypoLabel {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}

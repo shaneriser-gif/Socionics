@@ -1,0 +1,68 @@
+.lead {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.leadLarge {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.note {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.inlineRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gridTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gridTwoWide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .gridTwo,
+  .gridTwoWide {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 16px;
+  background: var(--color-bg-1);
+}
+
+.glowCard {
+  border: 1px solid var(--color-line-bright);
+  border-radius: 4px;
+  padding: 22px 24px;
+  background: linear-gradient(135deg, var(--color-bg-2), var(--color-glow));
+  position: relative;
+  overflow: hidden;
+}
+
+.glowOrb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.18), transparent 70%);
+}

@@ -1,0 +1,124 @@
+.root {
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 18px;
+  background: var(--color-bg-1);
+}
+
+.title {
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+}
+
+.tempCard {
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid var(--color-line-bright);
+  border-radius: 4px;
+  background: var(--color-glow);
+  box-shadow:
+    0 0 5px rgba(157, 78, 221, 0.35),
+    0 0 12px rgba(157, 78, 221, 0.12);
+}
+
+.tempLabel {
+  color: var(--color-neon);
+  font-size: 9px;
+  font-family: var(--font-mono);
+  margin-bottom: 6px;
+}
+
+.tempName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.tempTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.egoCard {
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+}
+
+.egoLabel {
+  color: var(--color-text-dim);
+  font-size: 9px;
+  font-family: var(--font-mono);
+  margin-bottom: 10px;
+}
+
+.finalType {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.finalCode {
+  color: var(--color-neon);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 30px;
+  text-shadow: 0 0 20px rgba(157, 78, 221, 0.55);
+}
+
+.finalName {
+  color: var(--color-text-secondary);
+  font-size: 11px;
+}
+
+.checks {
+  margin-top: 12px;
+}
+
+.checksLabel {
+  color: var(--color-text-dim);
+  font-size: 9px;
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 0;
+}
+
+.checkDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-dim);
+}
+
+.checkDot[data-status="ok"] {
+  background: var(--color-ok);
+}
+
+.checkDot[data-status="fail"] {
+  background: var(--color-fail);
+}
+
+.checkText {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.checkText[data-status="ok"] {
+  color: var(--color-ok);
+}
+
+.checkText[data-status="fail"] {
+  color: var(--color-fail);
+}
