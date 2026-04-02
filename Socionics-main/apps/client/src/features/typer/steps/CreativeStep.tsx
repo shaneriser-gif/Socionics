@@ -22,7 +22,7 @@ export default function CreativeStep({ typer }: CreativeStepProps) {
   return (
     <div>
       <Eyebrow>Этап 2 · Блок ЭГО · Творческая функция</Eyebrow>
-      <Heading>О чём ему интересно думать?</Heading>
+      <Heading>О чём тебе интересно думать?</Heading>
       <p className={common.lead}>
         Творческая — инструмент, через который человек проявляет себя, решает
         задачи и взаимодействует с миром.
