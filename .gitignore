@@ -4,3 +4,4 @@ apps/*/dist
 apps/*/node_modules
 .env
 .env.*.local
+typer-eng

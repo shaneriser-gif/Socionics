@@ -27,6 +27,23 @@
     0 0 12px rgba(157, 78, 221, 0.12);
 }
 
+@keyframes pistachioOptionGlow {
+  0%, 100% {
+    border-color: var(--color-line);
+    box-shadow: none;
+    background: transparent;
+  }
+  50% {
+    border-color: #5dfc84;
+    box-shadow: 0 0 14px rgba(93, 252, 132, 0.3), 0 0 35px rgba(93, 252, 132, 0.08);
+    background: rgba(93, 252, 132, 0.04);
+  }
+}
+
+.hint {
+  animation: pistachioOptionGlow var(--hint-duration, 2s) ease-in-out var(--hint-delay, 0s) infinite;
+}
+
 .selected {
   border: 1px solid var(--color-neon);
   background: var(--color-glow);

@@ -41,6 +41,8 @@ export default function ExtraversionStep({ typer }: ExtraversionStepProps) {
         who="→ ЭКСТРАВЕРТ"
         onClick={() => typer.setAnswer("extraversion", "extrovert")}
         selected={typer.answers.extraversion === "extrovert"}
+        hintIndex={0}
+        groupSelected={!!typer.answers.extraversion}
       />
       <AnswerOption
         label="Интроверт — вглубь и внутрь"
@@ -48,6 +50,8 @@ export default function ExtraversionStep({ typer }: ExtraversionStepProps) {
         who="→ ИНТРОВЕРТ"
         onClick={() => typer.setAnswer("extraversion", "introvert")}
         selected={typer.answers.extraversion === "introvert"}
+        hintIndex={1}
+        groupSelected={!!typer.answers.extraversion}
       />
       <HintBox title="Уточняющие вопросы">
         <div className={styles.hintList}>

@@ -34,6 +34,8 @@ export default function PositivismStep({ typer }: PositivismStepProps) {
         who="→ ПОЗИТИВИСТ"
         onClick={() => typer.setAnswer("positivism", "positive")}
         selected={typer.answers.positivism === "positive"}
+        hintIndex={0}
+        groupSelected={!!typer.answers.positivism}
       />
       <AnswerOption
         label="Негативист — замечает то, чего нет"
@@ -41,6 +43,8 @@ export default function PositivismStep({ typer }: PositivismStepProps) {
         who="→ НЕГАТИВИСТ"
         onClick={() => typer.setAnswer("positivism", "negative")}
         selected={typer.answers.positivism === "negative"}
+        hintIndex={1}
+        groupSelected={!!typer.answers.positivism}
       />
       <HintBox title="⚠ Бывают отклонения — читать обязательно">
         <div className={styles.warnList}>

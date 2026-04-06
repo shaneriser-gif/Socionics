@@ -23,3 +23,16 @@
 .fail {
   color: var(--color-fail);
 }
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note {
+  color: var(--color-text-dim);
+  font-size: 9px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}

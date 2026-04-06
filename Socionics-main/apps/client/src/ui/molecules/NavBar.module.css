@@ -31,21 +31,31 @@
   font-family: var(--font-mono);
 }
 
+@keyframes pistachioNavPulse {
+  0%, 100% {
+    box-shadow: none;
+    border-color: rgba(93, 252, 132, 0.2);
+    color: rgba(93, 252, 132, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(93, 252, 132, 0.55), 0 0 40px rgba(93, 252, 132, 0.18);
+    border-color: #5dfc84;
+    color: #5dfc84;
+  }
+}
+
 .next {
   padding: 9px 22px;
   border-radius: 3px;
-  border: 1px solid var(--color-neon);
-  background: var(--color-glow);
+  border: 1px solid var(--color-pistachio);
+  background: rgba(93, 252, 132, 0.03);
   cursor: pointer;
-  color: var(--color-neon);
+  color: var(--color-pistachio);
   font-size: 10px;
   font-weight: 700;
   font-family: var(--font-mono);
   letter-spacing: 0.12em;
-  transition: all 0.2s;
-  box-shadow:
-    0 0 8px rgba(157, 78, 221, 0.35),
-    0 0 20px rgba(157, 78, 221, 0.12);
+  animation: pistachioNavPulse 5s ease-in-out infinite;
 }
 
 .next:disabled {
@@ -54,4 +64,5 @@
   background: transparent;
   cursor: not-allowed;
   box-shadow: none;
+  animation: none;
 }

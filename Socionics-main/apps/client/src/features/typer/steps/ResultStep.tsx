@@ -1,5 +1,4 @@
 import Divider from "../../../ui/atoms/Divider";
-import ExportPanel from "../../../ui/organisms/ExportPanel";
 import type { TyperController } from "../hooks/useTyperState";
 import styles from "./ResultStep.module.css";
 
@@ -111,36 +110,27 @@ export default function ResultStep({ typer }: ResultStepProps) {
       </div>
 
       <div className={styles.path}>
-        <div className={styles.pathLabel}>ПОЛНЫЙ ПУТЬ</div>
+        <div className={styles.pathLabel}>СПИСОК ОТВЕТОВ</div>
         {[
-          ["Нальность", labels.rationalLabel],
-          ["Вертность", labels.extroLabel],
-          ["Темперамент", activeTemp?.name ?? null],
-          ["Тальность", labels.staticsLabel],
-          ["Позитивизм", labels.posLabel],
-          ["Процесс/Результат", labels.procLabel],
-          ["Базовая", typer.answers.base],
-          ["Творческая", typer.answers.creative],
-        ].map(([label, value], index) => (
+          { label: "Нальность",        value: labels.rationalLabel,     fail: false },
+          { label: "Вертность",         value: labels.extroLabel,        fail: false },
+          { label: "Темперамент",       value: activeTemp?.name ?? null, fail: false },
+          { label: "Тальность",         value: labels.staticsLabel,      fail: typer.talMatch === false },
+          { label: "Позитивизм",        value: labels.posLabel,          fail: typer.typePosFail === true },
+          { label: "Процесс/Результат", value: labels.procLabel,         fail: typer.typeProcFail === true },
+          { label: "Базовая",           value: typer.answers.base,       fail: false },
+          { label: "Творческая",        value: typer.answers.creative,   fail: false },
+        ].map(({ label, value, fail }, index) => (
           <div
             key={label}
             className={styles.pathRow}
             data-alt={index % 2 === 1}
           >
-            <span className={styles.pathName}>{label}</span>
-            <span className={styles.pathValue}>{value ?? "—"}</span>
+            <span className={fail ? styles.pathNameFail : styles.pathName}>{label}</span>
+            <span className={fail ? styles.pathValueFail : styles.pathValue}>{value ?? "—"}</span>
           </div>
         ))}
       </div>
-
-      <ExportPanel
-        finalType={finalType}
-        typeInfo={typeInfo}
-        activeTemp={activeTemp}
-        labels={labels}
-        base={typer.answers.base}
-        creative={typer.answers.creative}
-      />
 
       <button type="button" onClick={typer.reset} className={styles.reset}>
         ↺ НОВОЕ ТИПИРОВАНИЕ

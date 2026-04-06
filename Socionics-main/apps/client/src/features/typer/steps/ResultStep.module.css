@@ -178,23 +178,34 @@
   justify-content: flex-end;
 }
 
+@keyframes resultButtonPulse {
+  0%, 100% {
+    border-color: rgba(93, 252, 132, 0.2);
+    color: rgba(93, 252, 132, 0.25);
+    box-shadow: none;
+  }
+  50% {
+    border-color: #5dfc84;
+    color: #5dfc84;
+    box-shadow: 0 0 12px rgba(93, 252, 132, 0.4), 0 0 30px rgba(93, 252, 132, 0.12);
+  }
+}
+
 .primaryLink {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 9px 16px;
   border-radius: 3px;
-  border: 1px solid var(--color-neon);
+  border: 1px solid rgba(93, 252, 132, 0.2);
   background: transparent;
-  color: var(--color-neon);
+  color: rgba(93, 252, 132, 0.25);
   font-size: 10px;
   font-weight: 700;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-decoration: none;
-  box-shadow:
-    0 0 8px rgba(157, 78, 221, 0.35),
-    0 0 20px rgba(157, 78, 221, 0.12);
+  animation: resultButtonPulse 5s ease-in-out 0s infinite;
 }
 
 .secondaryLink {
@@ -203,14 +214,15 @@
   gap: 6px;
   padding: 9px 16px;
   border-radius: 3px;
-  border: 1px solid var(--color-neon-dim);
+  border: 1px solid rgba(93, 252, 132, 0.2);
   background: transparent;
-  color: var(--color-text-secondary);
+  color: rgba(93, 252, 132, 0.25);
   font-size: 10px;
   font-weight: 700;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-decoration: none;
+  animation: resultButtonPulse 5s ease-in-out 1.67s infinite;
 }
 
 .donate {
@@ -241,23 +253,15 @@
   gap: 6px;
   padding: 9px 16px;
   border-radius: 3px;
-  border: 1px solid var(--color-neon);
+  border: 1px solid #5dfc84;
   background: transparent;
-  color: var(--color-neon);
+  color: #5dfc84;
   font-size: 10px;
   font-weight: 700;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-decoration: none;
-  box-shadow:
-    0 0 8px rgba(157, 78, 221, 0.35),
-    0 0 20px rgba(157, 78, 221, 0.12);
-  transition: all 0.2s ease;
-}
-
-.donateButton:hover {
-  background: var(--color-neon);
-  color: var(--color-bg-1);
+  box-shadow: 0 0 12px rgba(93, 252, 132, 0.4), 0 0 30px rgba(93, 252, 132, 0.12);
 }
 
 .egoGrid {
@@ -327,8 +331,19 @@
   font-size: 12px;
 }
 
+.pathNameFail {
+  color: var(--color-fail);
+  font-size: 12px;
+}
+
 .pathValue {
   color: var(--color-text-primary);
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+
+.pathValueFail {
+  color: var(--color-fail);
   font-size: 12px;
   font-family: var(--font-mono);
 }

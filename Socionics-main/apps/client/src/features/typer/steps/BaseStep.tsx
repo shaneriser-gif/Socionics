@@ -38,7 +38,7 @@ export default function BaseStep({ typer }: BaseStepProps) {
         </span>
       </div>
       <QuestionCard>{bd.q}</QuestionCard>
-      {bd.opts.map((opt) => (
+      {bd.opts.map((opt, i) => (
         <AnswerOption
           key={opt.v}
           label={
@@ -50,6 +50,8 @@ export default function BaseStep({ typer }: BaseStepProps) {
           who={opt.who}
           onClick={() => typer.setAnswer("base", opt.v)}
           selected={typer.answers.base === opt.v}
+          hintIndex={i}
+          groupSelected={!!typer.answers.base}
         />
       ))}
       <NavBar

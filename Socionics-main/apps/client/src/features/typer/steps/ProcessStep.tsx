@@ -28,6 +28,8 @@ export default function ProcessStep({ typer }: ProcessStepProps) {
         who="→ РЕЗУЛЬТАТЕР"
         onClick={() => typer.setAnswer("process", "result")}
         selected={typer.answers.process === "result"}
+        hintIndex={0}
+        groupSelected={!!typer.answers.process}
       />
       <AnswerOption
         label="Процесс — важно движение"
@@ -35,6 +37,8 @@ export default function ProcessStep({ typer }: ProcessStepProps) {
         who="→ ПРОЦЕССЕР"
         onClick={() => typer.setAnswer("process", "process")}
         selected={typer.answers.process === "process"}
+        hintIndex={1}
+        groupSelected={!!typer.answers.process}
       />
       <HintBox title="⚠ Частые ловушки">
         <div className={styles.warnList}>

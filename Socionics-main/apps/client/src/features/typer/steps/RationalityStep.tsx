@@ -31,6 +31,8 @@ export default function RationalityStep({ typer }: RationalityStepProps) {
         who="→ РАЦИОНАЛ"
         onClick={() => typer.setAnswer("rationality", "rational")}
         selected={typer.answers.rationality === "rational"}
+        hintIndex={0}
+        groupSelected={!!typer.answers.rationality}
       />
       <AnswerOption
         label="По ситуации  /  И так, и так"
@@ -38,6 +40,8 @@ export default function RationalityStep({ typer }: RationalityStepProps) {
         who="→ ИРРАЦИОНАЛ"
         onClick={() => typer.setAnswer("rationality", "irrational")}
         selected={typer.answers.rationality === "irrational"}
+        hintIndex={1}
+        groupSelected={!!typer.answers.rationality}
       />
       <HintBox title="Уточняющие вопросы">
         <div className={styles.hintList}>

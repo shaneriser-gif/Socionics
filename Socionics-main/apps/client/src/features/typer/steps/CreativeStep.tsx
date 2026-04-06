@@ -36,7 +36,7 @@ export default function CreativeStep({ typer }: CreativeStepProps) {
         </span>
       </div>
       <QuestionCard>{bd.q}</QuestionCard>
-      {bd.opts.map((opt) => (
+      {bd.opts.map((opt, i) => (
         <AnswerOption
           key={opt.v}
           label={
@@ -48,6 +48,8 @@ export default function CreativeStep({ typer }: CreativeStepProps) {
           who={opt.who}
           onClick={() => typer.setAnswer("creative", opt.v)}
           selected={typer.answers.creative === opt.v}
+          hintIndex={i}
+          groupSelected={!!typer.answers.creative}
         />
       ))}
       <NavBar

@@ -33,3 +33,30 @@ button {
   background: rgba(157, 78, 221, 0.3);
   border-radius: 2px;
 }
+
+/* ── Pistachio hint animations ── */
+@keyframes pistachioOptionGlow {
+  0%, 100% {
+    border-color: var(--color-line);
+    box-shadow: none;
+    background: transparent;
+  }
+  50% {
+    border-color: var(--color-pistachio);
+    box-shadow: 0 0 14px rgba(0, 187, 46, 0.3), 0 0 35px rgba(0, 187, 46, 0.08);
+    background: rgba(0, 187, 46, 0.04);
+  }
+}
+
+@keyframes pistachioNavPulse {
+  0%, 100% {
+    box-shadow: none;
+    border-color: rgba(2, 214, 54, 0.25);
+    color: rgba(2, 214, 54, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(2, 214, 54, 0.6), 0 0 40px rgba(2, 214, 54, 0.2);
+    border-color: #02d636;
+    color: #02d636;
+  }
+}

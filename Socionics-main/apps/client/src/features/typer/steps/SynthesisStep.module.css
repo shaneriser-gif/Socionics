@@ -1,3 +1,53 @@
+@keyframes pistachioOptionGlow {
+  0%, 100% {
+    border-color: var(--color-line);
+    box-shadow: none;
+    background: transparent;
+  }
+  50% {
+    border-color: #5dfc84;
+    box-shadow: 0 0 14px rgba(93, 252, 132, 0.3), 0 0 35px rgba(93, 252, 132, 0.08);
+    background: rgba(93, 252, 132, 0.04);
+  }
+}
+
+@keyframes confirmYesPulse {
+  0%, 100% {
+    border-color: rgba(93, 252, 132, 0.2);
+    box-shadow: none;
+    color: rgba(93, 252, 132, 0.25);
+  }
+  50% {
+    border-color: #5dfc84;
+    box-shadow: 0 0 12px rgba(93, 252, 132, 0.35);
+    color: #5dfc84;
+  }
+}
+
+@keyframes confirmNoPulse {
+  0%, 100% {
+    border-color: rgba(157, 78, 221, 0.15);
+    color: rgba(200, 100, 100, 0.25);
+  }
+  50% {
+    border-color: rgba(200, 80, 80, 0.5);
+    color: #d97878;
+  }
+}
+
+/* ДА/НЕТ alternating hint */
+.confirmHint0 {
+  animation: confirmYesPulse 5s ease-in-out 0s infinite;
+}
+.confirmHint1 {
+  animation: confirmNoPulse 5s ease-in-out 2.5s infinite;
+}
+
+/* Temperament grid hint — 4-step cycle */
+.overrideHint {
+  animation: pistachioOptionGlow var(--hint-duration, 4s) ease-in-out var(--hint-delay, 0s) infinite;
+}
+
 .summary {
   border: 1px solid var(--color-line);
   border-radius: 4px;
@@ -163,9 +213,9 @@
 .confirmYes {
   padding: 9px 28px;
   border-radius: 3px;
-  border: 1px solid var(--color-neon);
-  background: var(--color-glow);
-  color: var(--color-neon);
+  border: 1px solid var(--color-pistachio);
+  background: rgba(93, 252, 132, 0.04);
+  color: var(--color-pistachio);
   font-size: 11px;
   font-weight: 700;
   font-family: var(--font-mono);

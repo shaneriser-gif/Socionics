@@ -16,11 +16,20 @@ export default function TopNav({
   return (
     <nav className={styles.root}>
       <div className={styles.left}>
-        <div className={styles.brand}>
+        <a
+          href="https://t.me/fractalscn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.brand}
+        >
           ФРАКТАЛЬНАЯ <span>СОЦИОНИКА</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.section}>{sectionLabel}</div>
+        </a>
+        {sectionLabel ? (
+          <>
+            <div className={styles.divider} />
+            <div className={styles.section}>{sectionLabel}</div>
+          </>
+        ) : null}
       </div>
       <div className={styles.right}>
         {step > 0 && onReset ? (

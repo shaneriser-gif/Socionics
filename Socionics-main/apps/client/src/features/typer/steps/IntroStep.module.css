@@ -53,3 +53,47 @@
   font-size: 13px;
   font-family: "DM Sans", sans-serif;
 }
+
+/* ── Video block ── */
+.videoCard {
+  border: 1px solid var(--color-line-bright);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  background: var(--color-glow);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.videoLabel {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  flex-shrink: 0;
+}
+
+.videoButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.videoBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--color-neon);
+  text-decoration: none;
+  border: 1px solid rgba(157, 78, 221, 0.35);
+  border-radius: 3px;
+  padding: 5px 14px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.videoBtn:hover {
+  background: rgba(157, 78, 221, 0.12);
+  border-color: var(--color-neon);
+}

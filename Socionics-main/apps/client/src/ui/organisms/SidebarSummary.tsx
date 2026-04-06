@@ -23,6 +23,8 @@ type SidebarSummaryProps = {
   finalType: TypeResult | null;
   talMatch: boolean | null;
   ppCheck: "ok" | "fail" | null;
+  typePosFail: boolean | null;
+  typeProcFail: boolean | null;
 };
 
 export default function SidebarSummary({
@@ -33,7 +35,15 @@ export default function SidebarSummary({
   finalType,
   talMatch,
   ppCheck,
+  typePosFail,
+  typeProcFail,
 }: SidebarSummaryProps) {
+  // When final type is known, use type-specific checks; otherwise use temperament checks
+  const posFail = finalType !== null ? typePosFail === true : ppCheck === "fail";
+  const procFail = finalType !== null ? typeProcFail === true : ppCheck === "fail";
+  const ppStatus = finalType !== null
+    ? (typePosFail === false && typeProcFail === false ? "ok" : typePosFail || typeProcFail ? "fail" : "neutral")
+    : (ppCheck ?? "neutral");
   return (
     <div className={styles.root}>
       <div className={styles.title}>ГИПОТЕЗА</div>
@@ -44,8 +54,16 @@ export default function SidebarSummary({
         value={labels.staticsLabel}
         fail={talMatch === false}
       />
-      <ValueRow label="Позитивизм/Негативизм" value={labels.posLabel} />
-      <ValueRow label="Процесс/Результат" value={labels.procLabel} />
+      <ValueRow
+        label="Позитивизм/Негативизм"
+        value={labels.posLabel}
+        fail={posFail}
+      />
+      <ValueRow
+        label="Процесс/Результат"
+        value={labels.procLabel}
+        fail={procFail}
+      />
 
       {activeTemp ? (
         <div className={styles.tempCard}>
@@ -105,23 +123,11 @@ export default function SidebarSummary({
           <div className={styles.checkRow}>
             <span
               className={styles.checkDot}
-              data-status={
-                ppCheck === "ok"
-                  ? "ok"
-                  : ppCheck === "fail"
-                  ? "fail"
-                  : "neutral"
-              }
+              data-status={ppStatus}
             />
             <span
               className={styles.checkText}
-              data-status={
-                ppCheck === "ok"
-                  ? "ok"
-                  : ppCheck === "fail"
-                  ? "fail"
-                  : "neutral"
-              }
+              data-status={ppStatus}
             >
               Позит+Проц
             </span>

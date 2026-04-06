@@ -14,6 +14,7 @@ import StaticsStep from "../features/typer/steps/StaticsStep";
 import SynthesisStep from "../features/typer/steps/SynthesisStep";
 import ProgressBar from "../ui/molecules/ProgressBar";
 import SidebarSummary from "../ui/organisms/SidebarSummary";
+import Footer from "../ui/organisms/Footer";
 import TopNav from "../ui/organisms/TopNav";
 import styles from "./SocionicsTyperPage.module.css";
 
@@ -38,12 +39,7 @@ export default function SocionicsTyperPage() {
   const typer = useTyperState();
   const StepComponent = stepComponents[typer.stepId];
 
-  const sectionLabel =
-    typer.step < 8
-      ? "ОПРЕДЕЛЕНИЕ СОЦИОНИЧЕСКОГО ТИПА"
-      : typer.step < 10
-      ? "УТОЧНЕНИЕ ТИПА"
-      : "РЕЗУЛЬТАТ";
+  const sectionLabel = "";
 
   return (
     <div className={styles.page}>
@@ -67,9 +63,12 @@ export default function SocionicsTyperPage() {
             finalType={typer.finalType}
             talMatch={typer.talMatch}
             ppCheck={typer.ppCheck}
+            typePosFail={typer.typePosFail}
+            typeProcFail={typer.typeProcFail}
           />
         </aside>
       </div>
+      <Footer />
     </div>
   );
 }

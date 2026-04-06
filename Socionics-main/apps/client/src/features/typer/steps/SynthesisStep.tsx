@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Eyebrow from "../../../ui/atoms/Eyebrow";
 import Heading from "../../../ui/atoms/Heading";
 import Tag from "../../../ui/atoms/Tag";
@@ -62,11 +63,18 @@ export default function SynthesisStep({ typer }: SynthesisStepProps) {
                 : typer.ppCheck === "fail"
                 ? "fail"
                 : "neutral",
+            note: typer.ppCheck === "fail" ? typer.posHint : null,
           },
           {
             label: "Процесс/Результат",
             value: typer.labels.procLabel,
-            status: "neutral",
+            status:
+              typer.ppCheck === "ok"
+                ? "ok"
+                : typer.ppCheck === "fail"
+                ? "fail"
+                : "neutral",
+            note: typer.ppCheck === "fail" ? typer.procHint : null,
           },
         ].map(({ label, value, status, note }) => (
           <StatusRow
@@ -103,14 +111,14 @@ export default function SynthesisStep({ typer }: SynthesisStepProps) {
           <div className={styles.confirmButtons}>
             <button
               type="button"
-              className={styles.confirmYes}
+              className={`${styles.confirmYes} ${styles.confirmHint0}`}
               onClick={() => handleConfirm(true)}
             >
               ДА
             </button>
             <button
               type="button"
-              className={styles.confirmNo}
+              className={`${styles.confirmNo} ${styles.confirmHint1}`}
               onClick={() => handleConfirm(false)}
             >
               НЕТ
@@ -141,17 +149,21 @@ export default function SynthesisStep({ typer }: SynthesisStepProps) {
             Возможно, какой-то из этих темпераментов тебе больше подходит?
           </div>
           <div className={styles.overrideGrid}>
-            {Object.entries(TEMPS).map(([key, temp]) => {
+            {Object.entries(TEMPS).map(([key, temp], i) => {
               const active = (typer.tempOverride ?? typer.hypKey) === key;
+              const hintStyle = !typer.tempOverride
+                ? ({ "--hint-delay": `${i * 1.25}s`, "--hint-duration": "5s" } as CSSProperties)
+                : {};
               return (
                 <button
                   key={key}
                   type="button"
+                  style={hintStyle}
                   onClick={() => {
                     typer.setTempOverride(key as TemperamentKey);
                   }}
                   className={`${styles.overrideButton} ${
-                    active ? styles.overrideActive : ""
+                    active ? styles.overrideActive : (!typer.tempOverride ? styles.overrideHint : "")
                   }`}
                 >
                   <div className={styles.overrideDesc}>{temp.desc}</div>

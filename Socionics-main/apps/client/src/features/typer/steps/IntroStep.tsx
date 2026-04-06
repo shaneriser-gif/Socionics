@@ -22,6 +22,28 @@ export default function IntroStep({ typer }: IntroStepProps) {
         Это тест на определение соционического типа. Он построен по моей авторской методике, где мы сначала определяем "темперамент", а потом 2 главные фунцкии в типе. Тест можно использовать как для себя, так и в качестве подсказки для начинающего типировщика.
       </p>
 
+      <div className={styles.videoCard}>
+        <div className={styles.videoLabel}>ПОСМОТРЕТЬ ВИДЕО ИНСТРУКЦИЮ</div>
+        <div className={styles.videoButtons}>
+          <a
+            href="https://vkvideo.ru/video-113543027_456239045"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.videoBtn}
+          >
+            VK Видео
+          </a>
+          <a
+            href="https://youtu.be/vT3yUFnUocE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.videoBtn}
+          >
+            YouTube
+          </a>
+        </div>
+      </div>
+
       <div className={styles.instructionCard}>
         <div className={styles.instructionLabel}>ИНСТРУКЦИЯ</div>
         <p className={styles.instructionText}>

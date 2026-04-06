@@ -14,6 +14,8 @@
   --color-ok: #22d3ee;
   --color-fail: #f43f5e;
   --color-warn: #e9a23b;
+  --color-pistachio: #5dfc84;
+  --color-pistachio-glow: rgba(93, 252, 132, 0.4);
 
   --font-display: "Syne", sans-serif;
   --font-mono: "Space Mono", "DM Sans", sans-serif;

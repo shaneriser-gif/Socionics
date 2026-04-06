@@ -73,12 +73,58 @@ export function useTyperState() {
         : "fail"
       : null;
 
+  // Unique valid posProc combos for the hypothesis temperament
+  const hypValidCombos = hypData
+    ? ([
+        ...new Map(
+          Object.values(hypData.posProc).map((c) => [`${c[0]}${c[1]}`, c]),
+        ).values(),
+      ] as [PositivityMark, ProcessMark][])
+    : [];
+
+  const talHint: string | null =
+    talMatch === false && hypData
+      ? `Ожидалось: ${hypData.tality === "static" ? "Статик" : "Динамик"}`
+      : null;
+
+  // Given user's positivism, find which process it should be paired with
+  const posHint: string | null =
+    ppCheck === "fail" && posVal
+      ? (() => {
+          const match = hypValidCombos.find(([p]) => p === posVal);
+          if (!match) return null;
+          return `Ожидалось: сочетание с ${match[1] === "пц" ? "процессер" : "результатер"}`;
+        })()
+      : null;
+
+  // Given user's process, find which positivism it should be paired with
+  const procHint: string | null =
+    ppCheck === "fail" && procVal
+      ? (() => {
+          const match = hypValidCombos.find(([, r]) => r === procVal);
+          if (!match) return null;
+          return `Ожидалось: сочетание с ${match[0] === "+" ? "позитивист" : "негативист"}`;
+        })()
+      : null;
+
   const finalType =
     activeTemp && answers.base && answers.creative
       ? TYPE_RESULTS[activeTemp.id]?.[`${answers.base}+${answers.creative}`] ??
         null
       : null;
   const typeInfo = finalType ? TYPE_INFO[finalType.c] : null;
+
+  // Type-specific positivism/process check (when final type is known)
+  const finalTypePosProc =
+    activeTemp && finalType ? activeTemp.posProc[finalType.c] ?? null : null;
+  const typePosFail: boolean | null =
+    finalTypePosProc !== null && posVal !== null
+      ? posVal !== finalTypePosProc[0]
+      : null;
+  const typeProcFail: boolean | null =
+    finalTypePosProc !== null && procVal !== null
+      ? procVal !== finalTypePosProc[1]
+      : null;
 
   const labels = {
     rationalLabel:
@@ -151,7 +197,12 @@ export function useTyperState() {
     activeTemp,
     activeTempKey,
     talMatch,
+    talHint,
     ppCheck,
+    posHint,
+    procHint,
+    typePosFail,
+    typeProcFail,
     finalType,
     typeInfo,
     labels,

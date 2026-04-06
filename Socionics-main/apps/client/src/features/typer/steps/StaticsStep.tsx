@@ -33,6 +33,8 @@ export default function StaticsStep({ typer }: StaticsStepProps) {
         who="→ СТАТИК"
         onClick={() => typer.setAnswer("statics", "static")}
         selected={typer.answers.statics === "static"}
+        hintIndex={0}
+        groupSelected={!!typer.answers.statics}
       />
       <AnswerOption
         label="Динамика — как видео"
@@ -40,6 +42,8 @@ export default function StaticsStep({ typer }: StaticsStepProps) {
         who="→ ДИНАМИК"
         onClick={() => typer.setAnswer("statics", "dynamic")}
         selected={typer.answers.statics === "dynamic"}
+        hintIndex={1}
+        groupSelected={!!typer.answers.statics}
       />
       <HintBox title="Уточняющие вопросы">
         <div className={styles.hintList}>
